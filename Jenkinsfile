@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat " C:\Users\m.casini\apache-maven-3.6.0-bin\apache-maven-3.6.0\mvn.cmd clean package"
+                set M2_HOME=C:\Users\m.casini\apache-maven-3.6.0-bin\apache-maven-3.6.0
+                set path=C:\Users\m.casini\apache-maven-3.6.0-bin\apache-maven-3.6.0\bin:%path%;
+                bat " mvn clean package"
             }
         }
     }
